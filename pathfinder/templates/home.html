@@ -1,0 +1,11 @@
+<h1>Cost = {{ cost }}</h1>
+<ul>
+    {% for line in lines %}
+        <h2> - {{line}}</h2>
+        {% for stop in stops %}
+            {% if line == stop.line %}
+            <h4>{{ stop.name }}</h4>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+</ul>
