@@ -24,7 +24,9 @@ def HomePageView(request):
                 list1.append(station)
                 
         for index, station in enumerate(list1):
-            if index < len(list1)-2 and list1[index].name == list1[index+1].name:
+            if index == 0 and list1[0].name != list1[1].name:
+                lines.append(list1[index+1].lines[0])
+            elif index < len(list1)-2 and list1[index].name == list1[index+1].name:
                 lines.append(list1[index+1].lines[0])
                 cost -= 1000
                 cost += 8
