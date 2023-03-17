@@ -2,3 +2,55 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Shabnam";
+  src: url('fonts/shabnam/Farsi-Digits/Shabnam-FD.eot') format('eot'),
+    /* IE6–8 */
+    url('fonts/shabnam/Farsi-Digits/Shabnam-FD.woff') format('woff'),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('fonts/shabnam/Farsi-Digits/Shabnam-FD.ttf') format('truetype');
+  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+:root {
+  --font-default: "Shabnam";
+}
+
+
+/* ----------------------------------- */
+
+body {
+  font-family: var(--font-default);
+}
+
+.l1, .l1w {
+  @apply bg-red-600
+}
+
+.l2{
+  @apply bg-indigo-900
+}
+
+.l3{
+  @apply bg-sky-600
+}
+
+.l4, .l4s{
+  @apply bg-yellow-500
+}
+
+.l5, .l5w{
+  @apply bg-green-600
+}
+
+.l6e, .l6w{
+  @apply bg-pink-500
+}
+
+.l7{
+  @apply bg-fuchsia-800
+}

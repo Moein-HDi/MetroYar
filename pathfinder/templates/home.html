@@ -2,24 +2,49 @@
 
 
 {% block content %}
-<form method="post">
-    {% csrf_token %}
-    {{ form.non_field_errors }}
-    <div>
-        <label for="id_origin">ایستگاه مبدأ:</label>
-        <input type="text"
-               name="origin"
-               id="id_origin"/>
-        {{ form.origin.errors }}
-    </div>
-    <div>
-        <label for="id_destination">ایستگاه مقصد:</label>
-        <input type="text"
-               name="destination"
-               id="id_destination"/>
-        {{ form.destination.errors }}
-    </div>
-    <button type="submit">مسیر یابی</button>
-</form>
 
+<div class="hero min-h-screen bg-base-200">
+    <div class="hero-content flex-col lg:flex-row-reverse">
+        <div class="text-center lg:text-right lg:mr-16">
+            <h1 class="text-5xl font-bold">مترو یار</h1>
+            <p class="py-6">به سادگی مسیر خود را در متروی تهران پیدا کنید! کافیست ایستگاه مبدأ و مقصد خود را مشخص کنید.
+            </p>
+        </div>
+        <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.non_field_errors }}
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text" for="id_origin">ایستگاه مبدأ:</span>
+                        </label>
+                        <select class="select select-primary w-full max-w-xs" name="origin" id="id_origin">
+                            <option disabled selected>انتخاب ایستگاه مبدأ</option>
+                            {% for option in options %}
+                                <option>{{ option }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">ایستگاه مقصد:</span>
+                        </label>
+
+                        <select class="select select-primary w-full max-w-xs" name="destination" id="id_destination">
+                            <option disabled selected>انتخاب ایستگاه مقصد</option>
+                            {% for option in options %}
+                                <option>{{ option }}</option>
+                            {% endfor %}
+                        </select>
+
+                    </div>
+                    <div class="form-control mt-6">
+                        <button type="submit" class="btn btn-primary">پیدا کردن مسیر</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}

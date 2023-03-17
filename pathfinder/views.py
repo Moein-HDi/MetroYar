@@ -74,18 +74,48 @@ def HomePageView(request):
         #     #then we are just on our way
         #     else:
         #         stops.append(Stop(station.name, current_line))
-    
-    
-    
+        lines2 = []
+        for line in lines:
+            if line == 'l1':
+                lines2.append(Line(line,'خط 1 - (تجریش - کهریزک)'))
+            elif line == 'l1w':
+                lines2.append(Line(line,'توسعه غربی خط 1'))
+            elif line == 'l2':
+                lines2.append(Line(line,'خط 2 - (فرهنگسرا - صادقیه)'))
+            elif line == 'l3':
+                lines2.append(Line(line,'خط 3 - (قائم - آزادگان)'))
+            elif line == 'l4':
+                lines2.append(Line(line,'خط 4 - (شهید کلاهدوز - ارم سبز)'))
+            elif line == 'l4s':
+                lines2.append(Line(line,'توسعه جنوبی خط 4'))
+            elif line == 'l5':
+                lines2.append(Line(line,'خط 5 - (ارم سبز - گلشهر)'))
+            elif line == 'l5w':
+                lines2.append(Line(line,'توسعه غربی خط 5'))
+            elif line == 'l6e':
+                lines2.append(Line(line,'خط 6 - (امام حسین - دولت آباد)'))
+            elif line == 'l6w':
+                lines2.append(Line(line,'خط 6 - (تربیت مدرس - شهید ستاری)'))
+            elif line == 'l1w':
+                lines2.append(Line(line,'خط 7 - (بسیج - میدان صنعت)'))
+
         context = {
             'stops': stops,
             'cost': cost,
-            'lines': lines
+            'lines': lines2,
+            
         }
         return render(request, 'result.html', context)
         
 
-    return render(request, 'home.html')
+    options = subway.stations
+
+    # for option in subway.stations:
+        
+    context = {
+        'options': options
+    }
+    return render(request, 'home.html', context)
 
 
 

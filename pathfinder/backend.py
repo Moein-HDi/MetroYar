@@ -1,5 +1,12 @@
 import heapq
 
+class Line:
+    def __init__(self, code, msg):
+        self.code = code
+        self.msg = msg
+        
+            
+
 class Stop:
     def __init__(self, name, line):
         self.name = name

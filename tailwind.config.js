@@ -1,12 +1,22 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './templates/**/*.html'
+    './pathfinder/templates/**/*.{html,js}'
   ],
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require("daisyui"), require("tailwindcss-flip")],
+  daisyui: {
+    styled: true,
+    themes: ["night"],
+    base: true,
+    utils: true,
+    logs: true,
+    rtl: true,
+    prefix: "",
+    darkTheme: "night",
+  },
 }
 
 
