@@ -1,11 +1,25 @@
-<h1>Cost = {{ cost }}</h1>
-<ul>
-    {% for line in lines %}
-        <h2> - {{line}}</h2>
-        {% for stop in stops %}
-            {% if line == stop.line %}
-            <h4>{{ stop.name }}</h4>
-            {% endif %}
-        {% endfor %}
-    {% endfor %}
-</ul>
+{% extends "base.html" %}
+
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    <div>
+        <label for="id_origin">ایستگاه مبدأ:</label>
+        <input type="text"
+               name="origin"
+               id="id_origin"/>
+        {{ form.origin.errors }}
+    </div>
+    <div>
+        <label for="id_destination">ایستگاه مقصد:</label>
+        <input type="text"
+               name="destination"
+               id="id_destination"/>
+        {{ form.destination.errors }}
+    </div>
+    <button type="submit">مسیر یابی</button>
+</form>
+
+{% endblock content %}
