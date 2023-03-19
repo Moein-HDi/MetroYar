@@ -13,13 +13,15 @@
   {% compress css %}
   <link rel="stylesheet" href="{% static 'src/output.css' %}">
   {% endcompress %}
-  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
 </head>
 
+
+
 <body dir="rtl">
   <!-- navbar -->
-  <div class="navbar bg-base-100">
+  <div class="navbar backdrop-blur-xl bg-base-100/30 sticky top-0 z-50 border-b-2 border-slate-100 border-opacity-10">
     <div class="navbar-start">
       <div class="dropdown">
         <label tabindex="0" class="btn btn-ghost btn-circle">
@@ -28,17 +30,17 @@
           </svg>
         </label>
         <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-          <li><a>مسیر یابی</a></li>
-          <li><a>نقشه مترو</a></li>
-          <li><a>درباره من</a></li>
+          <li><a href="/">مسیر یابی</a></li>
+          <li class="disabled"><a>نقشه مترو</a></li>
+          <li><label for="my-modal-4">درباره من</label></li>
         </ul>
       </div>
     </div>
     <div class="navbar-center">
-      <a class="btn btn-ghost normal-case text-xl" href="/">مترو یاب</a>
+      <a class="btn btn-ghost normal-case text-primary text-xl font-extrabold" href="/">مترو یاب</a>
     </div>
     <div class="navbar-end">
-      <button class="btn btn-ghost btn-circle">
+      <!-- <button class="btn btn-ghost btn-circle">
         <div class="indicator">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -46,12 +48,77 @@
           </svg>
           <span class="badge badge-xs badge-warning indicator-item"></span>
         </div>
-      </button>
+      </button> -->
     </div>
   </div>
+  <!-- back -->
+  <div class="hero min-h-screen bg-base-200 relative" style="background-image: url({% static 'BACK.svg' %});">
+    <div class="hero-overlay bg-opacity-80"></div>
+    {% block content %}
+    {% endblock content %}
+  </div>
+  <!-- footer -->
+  <footer class="footer items-center p-4 bg-neutral text-neutral-content" dir="ltr">
+    <div class="items-center grid-flow-col">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 698.68 236.69" class="d-block mx-lg-auto img-fluid"
+        alt="caloriecounter" loading="lazy" width="40" height="30" style="opacity: 60%">
+        <defs>
+          <style>
+            .cls-2 {
+              fill: #FBBD23;
+            }
+          </style>
+        </defs>
+        <g id="Layer_2" data-name="Layer 2">
+          <g id="Layer_2-2" data-name="Layer 2">
+            <path class="cls-2"
+              d="M580.34,0h-187L281.11,194.8H119v0h-1.64a76.45,76.45,0,0,1,1-152.89H256.59L231.93,85,218.8,107.94h48.26L328.79,0H119.87c-.51,0-1,0-1.53,0-1,0-2.1,0-3.15.05h0l-2.58.1c-1.73.09-3.44.21-5.15.36s-3.4.34-5.08.57A118.43,118.43,0,0,0,5.71,82Q4.16,86.7,3,91.61a.38.38,0,0,0,0,.1c-.67,2.87-1.22,5.75-1.66,8.68a118.24,118.24,0,0,0-1.36,18c0,.92,0,1.83,0,2.73,0,.54,0,1.1.05,1.64.06,1.38.12,2.73.22,4.09.06.76.11,1.51.19,2.25a.33.33,0,0,0,0,.14c.09.83.17,1.66.26,2.47a1.73,1.73,0,0,0,0,.32c.08.73.17,1.46.27,2.17,0,.24.07.49.1.73.1.73.21,1.45.32,2.18q.44,2.59.94,5.14c.35,1.72.74,3.45,1.18,5.16s.9,3.36,1.39,5c.25.83.51,1.66.78,2.47.59,1.85,1.24,3.68,1.93,5.49a118.36,118.36,0,0,0,109.13,76.33,4.57,4.57,0,0,0,.74,0c.26,0,.53,0,.78,0,.51,0,1,0,1.53,0H305.31L417.56,41.89H580.34a76.46,76.46,0,0,1,0,152.91H441.56l37.78-66.05H431.08L369.36,236.67h211.5A118.33,118.33,0,0,0,580.34,0Z" />
+          </g>
+        </g>
+      </svg>
+      <p>Copyright © 2023 - All right reserved</p>
+    </div>
+    <div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
+      
+      <a href="https://github.com/Moein-HDi"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="fill-current" viewBox="0 0 16 16">
+          <path
+            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+        </svg>
+      </a>
+    </div>
+  </footer>
 
-  {% block content %}
-  {% endblock content %}
+  <input type="checkbox" id="my-modal-4" class="modal-toggle" />
+  <label for="my-modal-4" class="modal cursor-pointer">
+    <label class="modal-box relative text-center" for="">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 698.68 236.69" class="d-block mx-lg-auto img-fluid"
+        alt="caloriecounter" loading="lazy" width="150" height="70" style="display: block;
+                            margin: auto">
+        <defs>
+          <style>
+            .cls-3 {
+              fill: #FBBD23;
+            }
+          </style>
+        </defs>
+        <g id="Layer_2" data-name="Layer 2">
+          <g id="Layer_2-2" data-name="Layer 2">
+            <path class="cls-3"
+              d="M580.34,0h-187L281.11,194.8H119v0h-1.64a76.45,76.45,0,0,1,1-152.89H256.59L231.93,85,218.8,107.94h48.26L328.79,0H119.87c-.51,0-1,0-1.53,0-1,0-2.1,0-3.15.05h0l-2.58.1c-1.73.09-3.44.21-5.15.36s-3.4.34-5.08.57A118.43,118.43,0,0,0,5.71,82Q4.16,86.7,3,91.61a.38.38,0,0,0,0,.1c-.67,2.87-1.22,5.75-1.66,8.68a118.24,118.24,0,0,0-1.36,18c0,.92,0,1.83,0,2.73,0,.54,0,1.1.05,1.64.06,1.38.12,2.73.22,4.09.06.76.11,1.51.19,2.25a.33.33,0,0,0,0,.14c.09.83.17,1.66.26,2.47a1.73,1.73,0,0,0,0,.32c.08.73.17,1.46.27,2.17,0,.24.07.49.1.73.1.73.21,1.45.32,2.18q.44,2.59.94,5.14c.35,1.72.74,3.45,1.18,5.16s.9,3.36,1.39,5c.25.83.51,1.66.78,2.47.59,1.85,1.24,3.68,1.93,5.49a118.36,118.36,0,0,0,109.13,76.33,4.57,4.57,0,0,0,.74,0c.26,0,.53,0,.78,0,.51,0,1,0,1.53,0H305.31L417.56,41.89H580.34a76.46,76.46,0,0,1,0,152.91H441.56l37.78-66.05H431.08L369.36,236.67h211.5A118.33,118.33,0,0,0,580.34,0Z" />
+          </g>
+        </g>
+      </svg>
+    </br>
+    <p></p>
+      made with <i class="bi bi-heart-fill" style="color: #FBBD23;"></i> and a lot of <i class="bi bi-cup-hot-fill" style="color: #FBBD23;"></i> by
+  </p>
+  <h1 class="text-4xl">Moein Hedayati</h1>
+  <p>ساخته شده توسط معین هدایتی</p>
+</br>
+  <a class="text-4xl" href="https://github.com/Moein-HDi"><i class="bi bi-github" style="color: #FBBD23;"></i></a>
+
+    </label>
+  </label>
 
   <script src="{% static 'jquery.js' %}"></script>
   <script>

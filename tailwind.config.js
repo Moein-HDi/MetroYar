@@ -15,7 +15,7 @@ module.exports = {
 
 
 
-          "primary": "#661AE6",
+          "primary": "#FBBD23",
 
 
 

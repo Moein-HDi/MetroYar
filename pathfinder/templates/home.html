@@ -1,70 +1,73 @@
 {% extends "base.html" %}
-
+{% load static %}
 
 {% block content %}
 
-<div class="hero min-h-screen bg-base-200">
-    <div class="hero-content flex-col lg:flex-row-reverse">
-        <div class="text-center lg:text-right lg:mr-16 max-w-sm lg:pl-10">
-            <h1 class="text-5xl font-bold">مترو یاب</h1>
-            <p class="py-6">به سادگی مسیر خود را در متروی تهران پیدا کنید! کافیست ایستگاه مبدأ و مقصد خود را مشخص کنید و
-                بهترین مسیر را بر اساس ایستگاه های فعال متروی تهران دریافت کنید.
-            </p>
+
+<div class="hero-content flex-col lg:flex-row-reverse">
+    <div class="text-center lg:text-right lg:mr-16 max-w-sm lg:pl-10">
+        <div class="indicator">
+            <span class="indicator-item indicator-start badge badge-primary">آزمایشی</span>
+            <div class="py-2"><h1 class="text-5xl font-bold">مترو یاب</h1></div>
         </div>
-        <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <div class="card-body">
-                <div {{error}}>
-                    <div class="alert alert-error shadow-lg">
+        <p class="py-6">به سادگی مسیر خود را در متروی تهران پیدا کنید! کافیست ایستگاه مبدأ و مقصد خود را مشخص کنید و
+            بهترین مسیر را بر اساس ایستگاه های فعال متروی تهران دریافت کنید.
+        </p>
+    </div>
+    <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+        <div class="card-body">
+            <div {{error}}>
+                <div class="alert alert-error shadow-lg">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
                         <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6"
-                                fill="none" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <div>
-                                <span>لطفا نام ایستگاه ها را صحیح انتخاب کنید.</span>
-                                <div class="text-xs">راهنمایی: پس از تایپ کردن چند حرف، از پیشنهاد های کادر استفاده
-                                    کنید.
-                                </div>
+                            <span>لطفا نام ایستگاه ها را صحیح انتخاب کنید.</span>
+                            <div class="text-xs">راهنمایی: پس از تایپ کردن چند حرف، از پیشنهاد های کادر استفاده
+                                کنید.
                             </div>
                         </div>
                     </div>
                 </div>
-                <form method="post">
-                    {% csrf_token %}
-                    {{ form.non_field_errors }}
-                    <div class="form-control">
-                        <label class="label">
-                            <span class="label-text" for="id_origin">ایستگاه مبدأ:</span>
-                        </label>
-                        <input class="input input-warning w-full max-w-lg" list="stationlist" name="origin"
-                            id="id_origin" placeholder="نام ایستگاه مبدأ">
-                        <datalist id="stationlist">
-                            {% for option in options %}
-                            <option>{{ option }}</option>
-                            {% endfor %}
-                        </datalist>
-                    </div>
-                    <div class="form-control">
-                        <label class="label">
-                            <span class="label-text">ایستگاه مقصد:</span>
-                        </label>
-
-                        <input class="input input-warning w-full max-w-lg" list="stationlist" name="destination"
-                            id="id_destination" placeholder="نام ایستگاه مقصد">
-                        <datalist id="stationlist">
-                            {% for option in options %}
-                            <option>{{ option }}</option>
-                            {% endfor %}
-                        </datalist>
-
-                    </div>
-                    <div class="form-control mt-6">
-                        <button type="submit" class="btn btn-warning">پیدا کردن مسیر</button>
-                    </div>
-                </form>
             </div>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text" for="id_origin">ایستگاه مبدأ:</span>
+                    </label>
+                    <input class="input input-warning w-full max-w-lg" list="stationlist" name="origin" id="id_origin"
+                        placeholder="نام ایستگاه مبدأ">
+                    <datalist id="stationlist">
+                        {% for option in options %}
+                        <option>{{ option }}</option>
+                        {% endfor %}
+                    </datalist>
+                </div>
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text">ایستگاه مقصد:</span>
+                    </label>
+
+                    <input class="input input-warning w-full max-w-lg" list="stationlist" name="destination"
+                        id="id_destination" placeholder="نام ایستگاه مقصد">
+                    <datalist id="stationlist">
+                        {% for option in options %}
+                        <option>{{ option }}</option>
+                        {% endfor %}
+                    </datalist>
+
+                </div>
+                <div class="form-control mt-6">
+                    <button type="submit" class="btn btn-warning">پیدا کردن مسیر</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
+
 {% endblock content %}

@@ -45,27 +45,27 @@ def HomePageView(request):
             lines2 = []
             for line in lines:
                 if line == 'l1':
-                    lines2.append(Line(line,'خط 1 - (تجریش - کهریزک)'))
+                    lines2.append(Line(line,'خط 1 - تجریش /کهریزک'))
                 elif line == 'l1w':
                     lines2.append(Line(line,'توسعه غربی خط 1'))
                 elif line == 'l2':
-                    lines2.append(Line(line,'خط 2 - (فرهنگسرا - صادقیه)'))
+                    lines2.append(Line(line,'خط 2 - فرهنگسرا/صادقیه'))
                 elif line == 'l3':
-                    lines2.append(Line(line,'خط 3 - (قائم - آزادگان)'))
+                    lines2.append(Line(line,'خط 3 - قائم/آزادگان'))
                 elif line == 'l4':
-                    lines2.append(Line(line,'خط 4 - (شهید کلاهدوز - ارم سبز)'))
+                    lines2.append(Line(line,'خط 4 - شهید کلاهدوز/ارم سبز'))
                 elif line == 'l4s':
                     lines2.append(Line(line,'توسعه جنوبی خط 4'))
                 elif line == 'l5':
-                    lines2.append(Line(line,'خط 5 - (ارم سبز - گلشهر)'))
+                    lines2.append(Line(line,'خط 5 - ارم سبز/گلشهر'))
                 elif line == 'l5w':
                     lines2.append(Line(line,'توسعه غربی خط 5'))
                 elif line == 'l6e':
-                    lines2.append(Line(line,'خط 6 - (امام حسین - دولت آباد)'))
+                    lines2.append(Line(line,'خط 6 - امام حسین/دولت آباد'))
                 elif line == 'l6w':
-                    lines2.append(Line(line,'خط 6 - (تربیت مدرس - شهید ستاری)'))
+                    lines2.append(Line(line,'خط 6 - تربیت مدرس/شهید ستاری'))
                 elif line == 'l7':
-                    lines2.append(Line(line,'خط 7 - (بسیج - میدان صنعت)'))
+                    lines2.append(Line(line,'خط 7 - بسیج/میدان صنعت'))
             error = 'hidden=True'
 
             if cost > 60:

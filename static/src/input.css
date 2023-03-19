@@ -71,3 +71,7 @@ body {
 .l7{
   @apply bg-fuchsia-800
 }
+
+.heroimage {
+  background-image: url(/BACK.svg);
+}

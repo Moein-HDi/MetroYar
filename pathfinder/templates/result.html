@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="bg-base-200">
     <div class="container mx-auto p-10 antialiased">
         <div class="card bg-base-100 shadow-xl flex-shrink-0 w-full mx-auto max-w-3xl p-6 m-10">
             
@@ -36,11 +35,15 @@
                 <span class="my-auto persian-digit text-xl">{{line.msg}}</span>
             </div>
 
-            <ul class="metro steps steps-vertical mb-5">
+            
                 {% for stop in stops %}
 
                 {% if line.code == stop.line %}
-                <li class="step persian-digit text-lg" data-content="">{{ stop.name }}</li>
+                <div class="flex metro text-xl mb-5 text-white rounded-2xl py-3">
+                    <div class="w-5 h-5 mx-5 my-auto rounded-full {{line.code}}"></div>
+                    <span class="my-auto persian-digit text-xl">{{stop.name}}</span>
+                </div>
+                
                 {% endif %}
 
                 {% endfor %}
@@ -49,5 +52,5 @@
 
         </div>
     </div>
-</div>
+
 {% endblock content %}
