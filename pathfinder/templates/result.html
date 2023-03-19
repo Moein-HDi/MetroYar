@@ -2,27 +2,45 @@
 
 {% block content %}
 <div class="bg-base-200">
-    <div class="container mx-auto p-10 text-center">
-        <div class="card bg-base-100 shadow-xl flex-shrink-0 w-full mx-auto max-w-xl p-6 m-10">
-            <div class="stats shadow mb-10">
+    <div class="container mx-auto p-10 antialiased">
+        <div class="card bg-base-100 shadow-xl flex-shrink-0 w-full mx-auto max-w-3xl p-6 m-10">
+            
+            <div class="stats shadow mb-5">
 
-                <div class="stat bg-base-300">
+                <div class="stat text-center bg-base-300">
                     <div class="stat-title">مدت زمان تقریبی سفر شما</div>
-                    <div class="stat-value">{{cost}} دقیقه</div>
-                    <div class="stat-desc">مدت زمان تغییر خط به ازای هر کدام 8 دقیقه در نظر گرفته شده است</div>
+                    <div class="stat-value persian-digit">{{cost}}</div>
+                    <div class="stat-desc persian-digit">{{costdesc}}</div>
                 </div>
 
             </div>
 
 
             {% for line in lines %}
-            <div class="card w-full py-4 mx-auto {{line.code}} text-center text-white"> <h2>{{line.msg}}</h2></div>
-                
-            <ul class="steps steps-vertical">
+            <div class="flex metro text-xl mb-5 {{line.code}} text-white rounded-2xl py-3">
+                <svg class="w-10 h-10 mx-5 my-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110.5 110">
+                    <defs>
+                        <style>
+                            .cls-1 {
+                                fill: #fff;
+                            }
+                        </style>
+                    </defs>
+                    <g id="Layer_2" data-name="Layer 2">
+                        <g id="Layer_2-2" data-name="Layer 2">
+                            <polygon class="cls-1"
+                                points="55.5 0 21.5 0 64.5 43 0 43 0 67 64.5 67 21.5 110 55.5 110 110.5 55 55.5 0" />
+                        </g>
+                    </g>
+                </svg>
+                <span class="my-auto persian-digit text-xl">{{line.msg}}</span>
+            </div>
+
+            <ul class="metro steps steps-vertical mb-5">
                 {% for stop in stops %}
 
                 {% if line.code == stop.line %}
-                <li class="step" data-content="">{{ stop.name }}</li>
+                <li class="step persian-digit text-lg" data-content="">{{ stop.name }}</li>
                 {% endif %}
 
                 {% endfor %}

@@ -12,6 +12,9 @@ class Stop:
         self.name = name
         self.line = line
 
+    def __repr__(self):
+        return f"{self.name}"
+
 class Station:
     def __init__(self, name, lines):
         self.name = name

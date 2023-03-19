@@ -1,4 +1,4 @@
-from pathfinder.backend import SubwaySystem, Station
+from pathfinder.backend import SubwaySystem, Station, Stop
 
 subway2 = SubwaySystem()
 
@@ -605,6 +605,40 @@ subway2.add_connection(fw6, fw6l6w, 1000)
 subway2.add_connection(fw6, fw6l7, 1000)
 subway2.add_connection(fw6l6w, fw6l7, 1000)
 
+
+def calculate(origin, destination):
+        fpath, cost = subway2.shortest_path(str(origin), str(destination))
+
+        list1 = []
+        lines = []
+        for station in fpath:
+            if station.name[-1] == '1' or station.name[-1] == '2':
+                station.name = station.name[:-1]
+                list1.append(station)
+            else:
+                list1.append(station)
+            
+        for index, station in enumerate(list1):
+            if index == 0 and list1[0].name != list1[1].name:
+                lines.append(list1[index+1].lines[0])
+            elif index < len(list1)-2 and list1[index].name == list1[index+1].name:
+                lines.append(list1[index+1].lines[0])
+                cost -= 1000
+                cost += 8
+        
+
+        if list1[0].name == list1[1].name:
+            list1.pop(0)
+        if list1[-1-1].name == list1[-1].name:
+            list1.pop(-1)
+            cost -= 1000
+            cost += 8
+
+        stops = []
+
+        for station in list1:
+            stops.append(Stop(station.name, station.lines[0]))
+        return (stops, lines, cost)
 
 
 

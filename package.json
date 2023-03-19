@@ -4,7 +4,6 @@
     "tailwindcss-flip": "^1.0.0"
   },
   "dependencies": {
-    "daisyui": "^2.51.4",
-    "jquery": "^3.6.4"
+    "daisyui": "^2.51.4"
   }
 }

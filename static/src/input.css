@@ -4,20 +4,33 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Shabnam";
-  src: url('fonts/shabnam/Farsi-Digits/Shabnam-FD.eot') format('eot'),
-    /* IE6–8 */
-    url('fonts/shabnam/Farsi-Digits/Shabnam-FD.woff') format('woff'),
-    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-    url('fonts/shabnam/Farsi-Digits/Shabnam-FD.ttf') format('truetype');
+  font-family: "Terafik";
+  src: url('fonts/IRTerafik.ttf') format('truetype');
   /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
   font-weight: normal;
   font-style: normal;
 }
 
+@font-face {
+  font-family: "TerafikBold";
+  src: url('fonts/IRTerafikBold.ttf') format('truetype');
+  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url('fonts/Vazirmatn-VariableFont_wght.ttf') format('truetype');
+  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+  font-style: normal;
+}
+
+
 
 :root {
-  --font-default: "Shabnam";
+  --font-default: "Vazirmatn";
+  --font-metro: "TerafikBold"
 }
 
 
@@ -25,6 +38,10 @@
 
 body {
   font-family: var(--font-default);
+}
+
+.metro {
+  font-family: var(--font-metro);
 }
 
 .l1, .l1w {
