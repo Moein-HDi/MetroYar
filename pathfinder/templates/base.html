@@ -1,4 +1,3 @@
-{% load compress %}
 {% load static %}
 
 <!DOCTYPE html>
@@ -10,9 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>مترو یاب</title>
 
-  {% compress css %}
   <link rel="stylesheet" href="{% static 'src/output.css' %}">
-  {% endcompress %}
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
 </head>
@@ -109,11 +106,11 @@
         </g>
       </svg>
     </br>
-    <p></p>
+    <p dir="ltr">
       made with <i class="bi bi-heart-fill" style="color: #FBBD23;"></i> and a lot of <i class="bi bi-cup-hot-fill" style="color: #FBBD23;"></i> by
   </p>
   <h1 class="text-4xl">Moein Hedayati</h1>
-  <p>ساخته شده توسط معین هدایتی</p>
+  
 </br>
   <a class="text-4xl" href="https://github.com/Moein-HDi"><i class="bi bi-github" style="color: #FBBD23;"></i></a>
 

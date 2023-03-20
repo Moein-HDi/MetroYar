@@ -2220,18 +2220,6 @@ html {
   margin-top: 1.5rem;
 }
 
-.mt-4 {
-  margin-top: 1rem;
-}
-
-.mt-7 {
-  margin-top: 1.75rem;
-}
-
-.mt-20 {
-  margin-top: 5rem;
-}
-
 .block {
   display: block;
 }
@@ -2250,10 +2238,6 @@ html {
 
 .h-6 {
   height: 1.5rem;
-}
-
-.h-4 {
-  height: 1rem;
 }
 
 .min-h-screen {
@@ -2278,10 +2262,6 @@ html {
 
 .w-full {
   width: 100%;
-}
-
-.w-4 {
-  width: 1rem;
 }
 
 .max-w-3xl {
@@ -2373,10 +2353,6 @@ html {
   fill: currentColor;
 }
 
-.fill-primary {
-  fill: hsl(var(--p));
-}
-
 .stroke-current {
   stroke: currentColor;
 }
@@ -2397,8 +2373,9 @@ html {
   padding: 1.5rem;
 }
 
-.p-1 {
-  padding: 0.25rem;
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .py-3 {
@@ -2411,13 +2388,13 @@ html {
   padding-bottom: 1.5rem;
 }
 
-.py-2 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
 .text-center {
   text-align: center;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
 .text-5xl {
@@ -2435,16 +2412,6 @@ html {
   line-height: 1rem;
 }
 
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
-
 .font-bold {
   font-weight: 700;
 }
@@ -2455,10 +2422,6 @@ html {
 
 .normal-case {
   text-transform: none;
-}
-
-.leading-6 {
-  line-height: 1.5rem;
 }
 
 .text-neutral-content {
@@ -2503,6 +2466,11 @@ html {
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-warning\/30 {
+  --tw-shadow-color: hsl(var(--wa) / 0.3);
+  --tw-shadow: var(--tw-shadow-colored);
 }
 
 .backdrop-blur-xl {

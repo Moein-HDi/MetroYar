@@ -3,7 +3,6 @@ from django.http import HttpResponse
 from pathfinder.backend import *
 from pathfinder.subway import *
 from pathfinder.subway2 import *
-from .models import path
 
 
 def HomePageView(request):
