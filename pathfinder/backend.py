@@ -4,7 +4,8 @@ class Line:
     def __init__(self, code, msg):
         self.code = code
         self.msg = msg
-        
+    def __repr__(self):
+        return f"{self.code}-{self.msg}"
             
 
 class Stop:
@@ -13,7 +14,7 @@ class Stop:
         self.line = line
 
     def __repr__(self):
-        return f"{self.name}"
+        return f"{self.name}-{self.line}"
 
 class Station:
     def __init__(self, name, lines):

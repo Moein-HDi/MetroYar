@@ -42,29 +42,85 @@ def HomePageView(request):
             s7, l7, cost11 = calculate('بسیج', 'میدان صنعت')
             
             lines2 = []
+            
             for line in lines:
                 if line == 'l1':
-                    lines2.append(Line(line,'خط 1 - تجریش /کهریزک'))
+                    i = stops.index(next(station for station in stops if station.line == 'l1'))
+                    j = s1.index(next(station for station in s1 if station.name == stops[i].name))
+                    if stops[i+1].name == s1[j+1].name:
+                        lines2.append(Line('l1','خط 1 - به سمت کهریزک'))
+                    else:
+                        lines2.append(Line('l1','خط 1 - به سمت تجریش'))
                 elif line == 'l1w':
-                    lines2.append(Line(line,'توسعه غربی خط 1'))
+                    i = stops.index(next(station for station in stops if station.line == 'l1w'))
+                    j = s1w.index(next(station for station in s1w if station.name == stops[i].name))
+                    if stops[i+1].name == s1w[j+1].name:
+                        lines2.append(Line('l1w','خط 1 - به سمت فرودگاه امام خمینی'))
+                    else:
+                        lines2.append(Line('l1w','خط 1 - به سمت شاهد'))
                 elif line == 'l2':
-                    lines2.append(Line(line,'خط 2 - فرهنگسرا/صادقیه'))
+                    i = stops.index(next(station for station in stops if station.line == 'l2'))
+                    j = s2.index(next(station for station in s2 if station.name == stops[i].name))
+                    if stops[i+1].name == s2[j+1].name:
+                        lines2.append(Line('l2','خط 2 - به سمت صادقیه'))
+                    else:
+                        lines2.append(Line('l2','خط 2 - به سمت فرهنگسرا'))
                 elif line == 'l3':
-                    lines2.append(Line(line,'خط 3 - قائم/آزادگان'))
+                    i = stops.index(next(station for station in stops if station.line == 'l3'))
+                    j = s3.index(next(station for station in s3 if station.name == stops[i].name))
+                    if stops[i+1].name == s3[j+1].name:
+                        lines2.append(Line('l3','خط 3 - به سمت آزادگان'))
+                    else:
+                        lines2.append(Line('l3','خط 3 - به سمت قائم'))
                 elif line == 'l4':
-                    lines2.append(Line(line,'خط 4 - شهید کلاهدوز/ارم سبز'))
+                    i = stops.index(next(station for station in stops if station.line == 'l4'))
+                    j = s4.index(next(station for station in s4 if station.name == stops[i].name))
+                    if stops[i+1].name == s4[j+1].name:
+                        lines2.append(Line('l4','خط 4 - به سمت ارم سبز'))
+                    else:
+                        lines2.append(Line('l4','خط 4 - به سمت شهید کلاهدوز'))
                 elif line == 'l4s':
-                    lines2.append(Line(line,'توسعه جنوبی خط 4'))
+                    i = stops.index(next(station for station in stops if station.line == 'l4s'))
+                    j = s4s.index(next(station for station in s4s if station.name == stops[i].name))
+                    if stops[i+1].name == s4s[j+1].name:
+                        lines2.append(Line('l4s','خط 4 - به سمت فرودگاه مهر آباد'))
+                    else:
+                        lines2.append(Line('l4s','خط 4 - به سمت بیمه'))
                 elif line == 'l5':
-                    lines2.append(Line(line,'خط 5 - ارم سبز/گلشهر'))
+                    i = stops.index(next(station for station in stops if station.line == 'l5'))
+                    j = s5.index(next(station for station in s5 if station.name == stops[i].name))
+                    if stops[i+1].name == s5[j+1].name:
+                        lines2.append(Line('l5','خط 5 - به سمت گلشهر'))
+                    else:
+                        lines2.append(Line('l5','خط 5 - به سمت صادقیه'))
                 elif line == 'l5w':
-                    lines2.append(Line(line,'توسعه غربی خط 5'))
+                    i = stops.index(next(station for station in stops if station.line == 'l5w'))
+                    j = s5w.index(next(station for station in s5w if station.name == stops[i].name))
+                    if stops[i+1].name == s5w[j+1].name:
+                        lines2.append(Line('l5w','خط 5 - به سمت شهید سپهبد سلیمانی'))
+                    else:
+                        lines2.append(Line('l5w','خط 5 - به سمت گلشهر'))
                 elif line == 'l6e':
-                    lines2.append(Line(line,'خط 6 - امام حسین/دولت آباد'))
+                    i = stops.index(next(station for station in stops if station.line == 'l6e'))
+                    j = s6e.index(next(station for station in s6e if station.name == stops[i].name))
+                    if stops[i+1].name == s6e[j+1].name:
+                        lines2.append(Line('l6e','خط 6 - به سمت امام حسین'))
+                    else:
+                        lines2.append(Line('l6e','خط 6 - به سمت دولت آباد'))
                 elif line == 'l6w':
-                    lines2.append(Line(line,'خط 6 - تربیت مدرس/شهید ستاری'))
+                    i = stops.index(next(station for station in stops if station.line == 'l6w'))
+                    j = s6w.index(next(station for station in s6w if station.name == stops[i].name))
+                    if stops[i+1].name == s6w[j+1].name:
+                        lines2.append(Line('l6w','خط 6 - به سمت شهید ستاری'))
+                    else:
+                        lines2.append(Line('l6w','خط 6 - به سمت تربیت مدرس'))
                 elif line == 'l7':
-                    lines2.append(Line(line,'خط 7 - بسیج/میدان صنعت'))
+                    i = stops.index(next(station for station in stops if station.line == 'l7'))
+                    j = s7.index(next(station for station in s7 if station.name == stops[i].name))
+                    if stops[i+1].name == s7[j+1].name:
+                        lines2.append(Line('l7','خط 7 - به سمت میدان صنعت'))
+                    else:
+                        lines2.append(Line('l7','خط 7 - به سمت بسیج'))
             error = 'hidden=True'
 
             if cost > 60:
