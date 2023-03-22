@@ -1,56 +1,67 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="container mx-auto p-10 antialiased">
-        <div class="card bg-base-100 shadow-xl flex-shrink-0 w-full mx-auto max-w-3xl p-6 m-10">
-            
-            <div class="stats shadow mb-5">
+<div class="container mx-auto py-5 px-5 antialiased">
+    <div class="card bg-base-100 shadow-xl flex-shrink-0 w-full mx-auto max-w-2xl p-6">
 
-                <div class="stat text-center bg-base-300">
+        <div class="text-center text-base sm:text-xl mb-5">
+        ایستگاه <span class="font-bold">{{ origin }}</span> ← ایستگاه <span class="font-bold">{{ destination }}</span>
+        </div>
+
+        <div class="stats shadow mb-5 overflow-hidden">
+
+            <div class="stat text-center bg-base-300 persian-digit">
+                <div class="tooltip tooltip-bottom"
+                    data-tip="توجه داشته باشید که این زمان دقیق نیست؛ مدت زمان هر تغییر خط 8 دقیقه محاسبه شده است">
                     <div class="stat-title">مدت زمان تقریبی سفر شما</div>
-                    <div class="stat-value persian-digit">{{cost}}</div>
-                    <div class="stat-desc persian-digit">{{costdesc}}</div>
                 </div>
 
+                <div class="stat-value persian-digit">{{cost}}</div>
+                <div class="stat-desc persian-digit">{{costdesc}}</div>
             </div>
 
+        </div>
 
-            {% for line in lines %}
-            <div class="flex metro text-xl mb-5 {{line.code}} text-white rounded-2xl py-3">
-                <svg class="w-10 h-10 mx-5 my-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110.5 110">
-                    <defs>
-                        <style>
-                            .cls-1 {
-                                fill: #fff;
-                            }
-                        </style>
-                    </defs>
-                    <g id="Layer_2" data-name="Layer 2">
-                        <g id="Layer_2-2" data-name="Layer 2">
-                            <polygon class="cls-1"
-                                points="55.5 0 21.5 0 64.5 43 0 43 0 67 64.5 67 21.5 110 55.5 110 110.5 55 55.5 0" />
-                        </g>
+
+        {% for line in lines %}
+        <div class="flex metro text-base sm:text-xl mb-5 {{line.code}} text-white rounded-2xl py-3">
+            <svg class="sm:w-10 sm:h-10 w-5 h-5 mx-5 my-auto" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 110.5 110">
+                <defs>
+                    <style>
+                        .cls-1 {
+                            fill: #fff;
+                        }
+                    </style>
+                </defs>
+                <g id="Layer_2" data-name="Layer 2">
+                    <g id="Layer_2-2" data-name="Layer 2">
+                        <polygon class="cls-1"
+                            points="55.5 0 21.5 0 64.5 43 0 43 0 67 64.5 67 21.5 110 55.5 110 110.5 55 55.5 0" />
                     </g>
-                </svg>
-                <span class="my-auto persian-digit text-xl">{{line.msg}}</span>
-            </div>
-
-            
+                </g>
+            </svg>
+            <span class="my-auto persian-digit text-base sm:text-xl mr-2">{{line.msg}}</span>
+        </div>
+        <div>
+            <ul class="mb-5 relative">
+                <div class="block absolute {{line.code}}-line inset-y-0 right-0 w-1 ml-7 my-5"></div>
                 {% for stop in stops %}
 
                 {% if line.code == stop.line %}
-                <div class="flex metro text-xl mb-5 text-white rounded-2xl py-3">
+                <li class="flex metro text-base sm:text-xl text-slate-300 rounded-2xl py-3">
                     <div class="w-5 h-5 mx-5 my-auto rounded-full {{line.code}}"></div>
-                    <span class="my-auto persian-digit text-xl">{{stop.name}}</span>
-                </div>
-                
+                    <span class="my-auto persian-digit text-base sm:text-xl">{{stop.name}}</span>
+                </li>
+
                 {% endif %}
 
                 {% endfor %}
             </ul>
-            {% endfor %}
-
         </div>
+        {% endfor %}
+
     </div>
+</div>
 
 {% endblock content %}

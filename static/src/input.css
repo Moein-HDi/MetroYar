@@ -45,33 +45,64 @@ body {
 }
 
 .l1, .l1w {
-  @apply bg-red-600
+  @apply bg-red-600 shadow-lg shadow-red-600/50
 }
 
 .l2{
-  @apply bg-indigo-900
+  @apply bg-indigo-700 shadow-lg shadow-indigo-700/50
 }
 
 .l3{
-  @apply bg-sky-600
+  @apply bg-sky-600 shadow-lg shadow-sky-600/50
 }
 
 .l4, .l4s{
-  @apply bg-yellow-500
+  @apply bg-yellow-500 shadow-lg shadow-yellow-500/50
 }
 
 .l5, .l5w{
-  @apply bg-green-600
+  @apply bg-green-600 shadow-lg shadow-green-600/50
 }
 
 .l6e, .l6w{
-  @apply bg-pink-500
+  @apply bg-pink-500 shadow-lg shadow-pink-500/50
 }
 
 .l7{
-  @apply bg-fuchsia-800
+  @apply bg-fuchsia-700 shadow-lg shadow-fuchsia-700/50
 }
+
+.l1-line, .l1w-line {
+  @apply bg-red-600/30 shadow-lg shadow-red-600/50
+}
+
+.l2-line{
+  @apply bg-indigo-700/30 shadow-lg shadow-indigo-700/50
+}
+
+.l3-line{
+  @apply bg-sky-600/30 shadow-lg shadow-sky-600/50
+}
+
+.l4-line, .l4s-line{
+  @apply bg-yellow-500/30 shadow-lg shadow-yellow-500/50
+}
+
+.l5-line, .l5w-line{
+  @apply bg-green-600/30 shadow-lg shadow-green-600/50
+}
+
+.l6e-line, .l6w-line{
+  @apply bg-pink-500/30 shadow-lg shadow-pink-500/50
+}
+
+.l7-line{
+  @apply bg-fuchsia-700/30 shadow-lg shadow-fuchsia-700/50
+}
+
+
 
 .heroimage {
   background-image: url(/BACK.svg);
 }
+
