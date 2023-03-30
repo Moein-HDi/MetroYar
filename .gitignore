@@ -1,7 +1,8 @@
-venv
+venv/
 db.sqlite3
-/node_modules
+node_modules/
 tailwind.config.js
 package-lock.json
 package.json
+static/CACHE
 
