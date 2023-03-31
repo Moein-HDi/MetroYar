@@ -64,7 +64,7 @@ body {
   @apply bg-green-600 shadow-lg shadow-green-600/40
 }
 
-.l6e, .l6w{
+.l6{
   @apply bg-pink-500 shadow-lg shadow-pink-500/40
 }
 
@@ -92,7 +92,7 @@ body {
   @apply bg-green-600/30 shadow-lg shadow-green-600/50
 }
 
-.l6e-line, .l6w-line{
+.l6-line{
   @apply bg-pink-500/30 shadow-lg shadow-pink-500/50
 }
 
@@ -120,7 +120,7 @@ body {
   @apply text-green-600
 }
 
-.l6e-text, .l6w-text{
+.l6-text{
   @apply text-pink-500
 }
 

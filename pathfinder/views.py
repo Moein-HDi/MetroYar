@@ -43,9 +43,9 @@ def HomePageView(request):
             s4s, l4s, cost6 = calculate('بیمه', 'پایانه 4و6 فرودگاه مهرآباد')
             s5, l5, cost7 = calculate('تهران (صادقیه)', 'گلشهر')
             s5w, l5w, cost8 = calculate('گلشهر', 'شهید سپهبد سلیمانی')
-            s6e, l6e, cost9 = calculate('دولت آباد', 'امام حسین')
-            s6w, l6w, cost10 = calculate('دانشگاه تربیت مدرس', 'شهید ستاری')
-            s7, l7, cost11 = calculate('بسیج', 'میدان صنعت')
+            s6, l6, cost9 = calculate('دولت آباد', 'شهید ستاری')
+            
+            s7, l7, cost11 = calculate('بسیج', 'شهید دادمان')
             
             lines2 = []
             
@@ -139,34 +139,23 @@ def HomePageView(request):
                     except:
                             lines2.append(Line('l5w','خط 5 - به سمت گلشهر'))
 
-                elif line == 'l6e':
-                    i = stops.index(next(station for station in stops if station.line == 'l6e'))
-                    j = s6e.index(next(station for station in s6e if station.name == stops[i].name))
+                elif line == 'l6':
+                    i = stops.index(next(station for station in stops if station.line == 'l6'))
+                    j = s6.index(next(station for station in s6 if station.name == stops[i].name))
                     try:
-                        if stops[i+1].name == s6e[j+1].name:
-                            lines2.append(Line('l6e','خط 6 - به سمت امام حسین'))
+                        if stops[i+1].name == s6[j+1].name:
+                            lines2.append(Line('l6','خط 6 - به سمت شهید ستاری'))
                         else:
-                            lines2.append(Line('l6e','خط 6 - به سمت دولت آباد'))
+                            lines2.append(Line('l6','خط 6 - به سمت دولت آباد'))
                     except:
-                        lines2.append(Line('l6e','خط 6 - به سمت دولت آباد'))
-
-                elif line == 'l6w':
-                    i = stops.index(next(station for station in stops if station.line == 'l6w'))
-                    j = s6w.index(next(station for station in s6w if station.name == stops[i].name))
-                    try:
-                        if stops[i+1].name == s6w[j+1].name:
-                            lines2.append(Line('l6w','خط 6 - به سمت شهید ستاری'))
-                        else:
-                            lines2.append(Line('l6w','خط 6 - به سمت تربیت مدرس'))
-                    except:
-                        lines2.append(Line('l6w','خط 6 - به سمت تربیت مدرس'))
+                        lines2.append(Line('l6','خط 6 - به سمت دولت آباد'))
 
                 elif line == 'l7':
                     i = stops.index(next(station for station in stops if station.line == 'l7'))
                     j = s7.index(next(station for station in s7 if station.name == stops[i].name))
                     try:
                         if stops[i+1].name == s7[j+1].name:
-                            lines2.append(Line('l7','خط 7 - به سمت میدان صنعت'))
+                            lines2.append(Line('l7','خط 7 - به سمت شهید دادمان'))
                         else:
                             lines2.append(Line('l7','خط 7 - به سمت بسیج'))
                     except:
