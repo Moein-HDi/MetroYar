@@ -5,6 +5,12 @@ from pathfinder.subway import *
 from pathfinder.subway2 import *
 
 
+def StationsView(request):
+    return render(request, 'stations.html')
+
+def MapView(request):
+    return render(request, 'map.html')
+
 def HomePageView(request):
     if request.method == 'POST':
         
