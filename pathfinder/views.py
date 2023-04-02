@@ -19,7 +19,7 @@ def HomePageView(request):
         
         origin = request.POST.get('origin')
         destination = request.POST.get('destination')
-        pathtype = request.POST.get('path')
+        # pathtype = request.POST.get('path')
         #input validation
         stlist = []
         for obj in subway.stations:
@@ -37,10 +37,11 @@ def HomePageView(request):
             return render(request, 'home.html', context)
         else:
             # Find path and its cost between stations
-            if pathtype == 'on':
-                stops, lines, cost = calculate(str(origin), str(destination))
-            else:
-                stops, lines, cost = calculateShort(str(origin), str(destination))
+            stops, lines, cost = calculate(str(origin), str(destination))
+            # if pathtype == 'on':
+            #     stops, lines, cost = calculate(str(origin), str(destination))
+            # else:
+            #     stops, lines, cost = calculateShort(str(origin), str(destination))
 
 
             s1, l1 ,cost1 = calculate('تجریش', 'کهریزک')
@@ -189,38 +190,6 @@ def HomePageView(request):
             }
             return render(request, 'result.html', context)
 
-        # current_line = ''
-        # linechange_penalty = 8
-        # stops = []
-        # lines = []
-
-        # #checking line change method
-        # def lineChange(a, b):
-        #     a_set = set(a)
-        #     b_set = set(b)
-        #     if (a_set & b_set):
-        #         return False
-        #     else:
-        #         return True
-
-        # for index, station in enumerate(fpath):
-        #     #checking if we are entering a station
-        #     if index == 0:
-        #         current_line = list(set(fpath[index].lines).intersection(fpath[index+1].lines))[0]
-        #         stops.append(Stop(station.name, current_line))
-        #         lines.append(current_line)
-        #     #checking if we are changing lines
-        #     elif index != len(fpath)-1 and lineChange(fpath[index-1].lines, fpath[index+1].lines):
-        #         cost += linechange_penalty
-        #         stops.append(Stop(station.name, current_line))
-        #         current_line = list(set(fpath[index].lines).intersection(fpath[index+1].lines))[0]
-        #         lines.append(current_line)
-        #         stops.append(Stop(station.name, current_line))
-        #     #then we are just on our way
-        #     else:
-        #         stops.append(Stop(station.name, current_line))
-        
-        
 
     options = subway.stations
 

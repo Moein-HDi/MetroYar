@@ -1419,14 +1419,6 @@ html {
   bottom: auto;
 }
 
-.tooltip-left:before {
-  transform: translateY(-50%);
-  top: 50%;
-  right: auto;
-  left: var(--tooltip-offset);
-  bottom: auto;
-}
-
 .tooltip-right:before {
   transform: translateY(-50%);
   top: 50%;
@@ -2404,15 +2396,6 @@ html {
   bottom: auto;
 }
 
-.tooltip-left:after {
-  transform: translateY(-50%);
-  border-color: transparent var(--tooltip-color) transparent transparent;
-  top: 50%;
-  right: auto;
-  left: calc(var(--tooltip-tail-offset) + 1px);
-  bottom: auto;
-}
-
 .tooltip-right:after {
   transform: translateY(-50%);
   border-color: transparent transparent transparent var(--tooltip-color);
@@ -2687,6 +2670,10 @@ html {
   z-index: 50;
 }
 
+.m-8 {
+  margin: 2rem;
+}
+
 .mx-5 {
   margin-left: 1.25rem;
   margin-right: 1.25rem;
@@ -2729,6 +2716,26 @@ html {
 
 .mt-3 {
   margin-top: 0.75rem;
+}
+
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
 }
 
 .block {
