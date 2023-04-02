@@ -16,6 +16,18 @@
       خود را مشخص کنید و بهترین مسیر را بر اساس ایستگاه های فعال متروی تهران
       دریافت کنید.
     </p>
+    <div>
+      <a href="/map" class="mr-3">
+        <button class="btn btn-warning btn-active btn-circle text-xl">
+          <i class="bi bi-map"></i>
+        </button>
+      </a>
+      <a href="/stations">
+        <button class="btn btn-warning btn-active btn-circle text-xl">
+          <i class="bi bi-pin-map"></i>
+        </button>
+      </a>
+    </div>
   </div>
   <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
     <div class="card-body">
@@ -82,12 +94,24 @@
 
         <div class="form-control mt-3">
           <label class="label cursor-pointer">
-            <div class="tooltip tooltip-warning font-bold antialiased" data-tip="غیر فعال کردن این گزینه می تواند با بیشتر کردن تغییر خطوط، مسیر کوتاه تری پیدا کند، اگر مطمئن نیستید آن را فعال نگه دارید.">
+            <div
+              class="tooltip tooltip-warning font-bold antialiased"
+              data-tip="غیر فعال کردن این گزینه می تواند با بیشتر کردن تغییر خطوط، مسیر کوتاه تری پیدا کند، اگر مطمئن نیستید آن را فعال نگه دارید."
+            >
               <i class="bi bi-question-circle"></i>
             </div>
-            
-            <span class="label-text" id="toggle_text"> پیدا کردن مسیر با کمترین تغییر خط</span> 
-            <input type="checkbox" onclick="textchange()" class="toggle toggle-primary" name="path" id="id_path" checked/>
+
+            <span class="label-text" id="toggle_text">
+              پیدا کردن مسیر با کمترین تغییر خط</span
+            >
+            <input
+              type="checkbox"
+              onclick="textchange()"
+              class="toggle toggle-primary"
+              name="path"
+              id="id_path"
+              checked
+            />
           </label>
         </div>
         <span id="toggle_warning" class="text-error text-sm font-bold"></span>
