@@ -1,4 +1,4 @@
-from pathfinder.backend import SubwaySystem, Station
+from pathfinder.backend import SubwaySystem, Station, Stop
 
 subway = SubwaySystem()
 
@@ -15,7 +15,7 @@ a8 = Station('شهید همت', ['l1'])
 a9 = Station('مصلی امام خمینی', ['l1'])
 a10 = Station('شهید بهشتی', ['l1', 'l3'])
 a11 = Station('شهید مفتح', ['l1'])
-a12l1 = Station('شهدای هفت تیر', ['l1'])
+a12 = Station('شهدای هفت تیر', ['l1', 'l6'])
 a13 = Station('طالقانی', ['l1'])
 a14 = Station('دروازه دولت', ['l1', 'l4'])
 a15 = Station('سعدی', ['l1'])
@@ -48,7 +48,7 @@ b8 = Station('حسن آباد', ['l2'])
 b9 = Station('ملت', ['l2'])
 b10 = Station('بهارستان', ['l2'])
 b11 = Station('دروازه شمیران', ['l2','l4'])
-b12 = Station('امام حسین', ['l2', 'l6e'])
+b12 = Station('امام حسین', ['l2', 'l6'])
 b13 = Station('شهید مدنی', ['l2'])
 b14 = Station('سبلان', ['l2'])
 b15 = Station('فدک', ['l2'])
@@ -69,7 +69,7 @@ c7 = Station('راه آهن', ['l3'])
 c8 = Station('مهدیه', ['l3', 'l7'])
 c9 = Station('منیریه', ['l3'])
 c10 = Station('تئاتر شهر', ['l3', 'l4'])
-c11l3 = Station('میدان ولیعصر', ['l3'])
+c11 = Station('میدان ولیعصر', ['l3', 'l6'])
 c12 = Station('میدان جهاد', ['l3'])
 c13 = Station('میرزای شیرازی', ['l3'])
 c14 = Station('سهروردی', ['l3'])
@@ -93,7 +93,7 @@ d6 = Station('دکتر حبیب اله', ['l4'])
 d7 = Station('توحید', ['l4', 'l7'])
 d8 = Station('میدان انقلاب اسلامی', ['l4'])
 d9 = Station('فردوسی', ['l4'])
-d10 = Station('میدان شهدا', ['l4', 'l6e'])
+d10 = Station('میدان شهدا', ['l4', 'l6'])
 d11 = Station('ابن سینا', ['l4'])
 d12 = Station('پیروزی', ['l4'])
 d13 = Station('نبرد', ['l4'])
@@ -114,21 +114,21 @@ e8 = Station('چیتگر', ['l5'])
 e9 = Station('ورزشگاه آزادی', ['l5'])
 #l5w
 ew1 = Station('شهید سپهبد سلیمانی', ['l5w'])
-#l6e
-f7 = Station('کارگر', ['l6w'])
-f8 = Station('بوستان لاله', ['l6w'])
-f9 = Station('امیرکبیر', ['l6e'])
-f10 = Station('شهید رضایی', ['l6e'])
-f11 = Station('بعثت', ['l6e'])
-f12 = Station('کیانشهر', ['l6e'])
-f13 = Station('دولت آباد', ['l6e'])
-#l6w
-f1 = Station('شهید ستاری', ['l6w'])
-f2 = Station('شهید اشرفی اصفهانی', ['l6w'])
-f3 = Station('یادگار امام', ['l6w'])
-f4 = Station('مرزداران', ['l6w'])
-f5 = Station('شهرک آزمایش', ['l6w'])
-f6 = Station('دانشگاه تربیت مدرس', ['l6w', 'l7'])
+#l6
+f7 = Station('کارگر', ['l6'])
+f8 = Station('بوستان لاله', ['l6'])
+f9 = Station('امیرکبیر', ['l6'])
+f10 = Station('شهید رضایی', ['l6'])
+f11 = Station('بعثت', ['l6'])
+f12 = Station('کیانشهر', ['l6'])
+f13 = Station('دولت آباد', ['l6'])
+#l6
+f1 = Station('شهید ستاری', ['l6'])
+f2 = Station('شهید اشرفی اصفهانی', ['l6'])
+f3 = Station('یادگار امام', ['l6'])
+f4 = Station('مرزداران', ['l6'])
+f5 = Station('شهرک آزمایش', ['l6'])
+f6 = Station('دانشگاه تربیت مدرس', ['l6', 'l7'])
 #l7
 g0 = Station('شهید دادمان', ['l7'])
 g1 = Station('میدان صنعت', ['l7'])
@@ -160,7 +160,7 @@ subway.add_station(a8)
 subway.add_station(a9)
 subway.add_station(a10)
 subway.add_station(a11)
-subway.add_station(a12l1)
+subway.add_station(a12)
 subway.add_station(a13)
 subway.add_station(a14)
 subway.add_station(a15)
@@ -211,7 +211,7 @@ subway.add_station(c7)
 subway.add_station(c8)
 subway.add_station(c9)
 subway.add_station(c10)
-subway.add_station(c11l3)
+subway.add_station(c11)
 subway.add_station(c12)
 subway.add_station(c13)
 subway.add_station(c14)
@@ -300,8 +300,8 @@ subway.add_connection(a7, a8, 2)
 subway.add_connection(a8, a9, 2)
 subway.add_connection(a9, a10, 2)
 subway.add_connection(a10, a11, 2)
-subway.add_connection(a11, a12l1, 2)
-subway.add_connection(a12l1, a13, 3)
+subway.add_connection(a11, a12, 2)
+subway.add_connection(a12, a13, 3)
 subway.add_connection(a13, a14, 2)
 subway.add_connection(a14, a15, 2)
 subway.add_connection(a15, a16, 2)
@@ -352,8 +352,8 @@ subway.add_connection(c6, c7, 2)
 subway.add_connection(c7, c8, 3)
 subway.add_connection(c8, c9, 2)
 subway.add_connection(c9, c10, 3)
-subway.add_connection(c10, c11l3, 4)
-subway.add_connection(c11l3, c12, 3)
+subway.add_connection(c10, c11, 4)
+subway.add_connection(c11, c12, 3)
 subway.add_connection(c12, c13, 3)
 subway.add_connection(c13, a10, 3)
 subway.add_connection(a10, c14, 2)
@@ -411,7 +411,14 @@ subway.add_connection(f1, f2, 1)
 subway.add_connection(f2, f3, 2)
 subway.add_connection(f3, f4, 2)
 subway.add_connection(f4, f5, 2)
-subway.add_connection(f5, f6, 6)
+subway.add_connection(f5, f6, 2)
+subway.add_connection(f6, f7, 2)
+subway.add_connection(f7, f8, 2)
+subway.add_connection(f8, c11, 2)
+subway.add_connection(c11, a12, 2)
+subway.add_connection(a12, b12, 3)
+
+subway.add_connection(g0, g1, 2)
 subway.add_connection(g1, g2, 2)
 subway.add_connection(g2, g3, 3)
 subway.add_connection(g3, f6, 2)
@@ -434,8 +441,44 @@ subway.add_connection(g13, g14, 3)
 
 
 
+def calculateShort(origin, destination):
+        fpath, cost = subway.shortest_path(str(origin), str(destination))
+        
+        current_line = ''
+        linechange_penalty = 8
+        stops = []
+        lines = []
 
+        #checking line change method
+        def lineChange(a, b):
+            a_set = set(a)
+            b_set = set(b)
+            if (a_set & b_set):
+                return False
+            else:
+                return True
 
+        for index, station in enumerate(fpath):
+            #checking if we are entering a station
+            if index == 0:
+                current_line = list(set(fpath[index].lines).intersection(fpath[index+1].lines))[0]
+                stops.append(Stop(station.name, current_line))
+                lines.append(current_line)
+            #checking if we are changing lines
+            elif index < len(fpath)-2 and lineChange(fpath[index-1].lines, fpath[index+1].lines):
+                cost += linechange_penalty
+                stops.append(Stop(station.name, current_line))
+                current_line = list(set(fpath[index].lines).intersection(fpath[index+1].lines))[0]
+                lines.append(current_line)
+                stops.append(Stop(station.name, current_line))
+            #then we are just on our way
+            else:
+                stops.append(Stop(station.name, current_line))
+        
+        
+        
+        
+        return (stops, lines, cost)
 
 
 

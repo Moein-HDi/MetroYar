@@ -16,6 +16,7 @@ def HomePageView(request):
         
         origin = request.POST.get('origin')
         destination = request.POST.get('destination')
+        pathtype = request.POST.get('path')
         #input validation
         stlist = []
         for obj in subway.stations:
@@ -32,8 +33,12 @@ def HomePageView(request):
             }
             return render(request, 'home.html', context)
         else:
-            # Find shortest path and its cost between stations
-            stops, lines, cost = calculate(str(origin), str(destination))
+            # Find path and its cost between stations
+            if pathtype == 'on':
+                stops, lines, cost = calculate(str(origin), str(destination))
+            else:
+                stops, lines, cost = calculateShort(str(origin), str(destination))
+
 
             s1, l1 ,cost1 = calculate('تجریش', 'کهریزک')
             s1w, l1w, cost2 = calculate('شاهد', 'فرودگاه امام خمینی')

@@ -79,7 +79,19 @@
             {% endfor %}
           </datalist>
         </div>
-        <div class="form-control mt-6">
+
+        <div class="form-control my-3">
+          <label class="label cursor-pointer">
+            <div class="tooltip tooltip-warning font-bold antialiased" data-tip="غیر فعال کردن این گزینه می تواند با بیشتر کردن تغییر خطوط، مسیر کوتاه تری پیدا کند، اگر مطمئن نیستید آن را فعال نگه دارید.">
+              <i class="bi bi-question-circle"></i>
+            </div>
+            
+            <span class="label-text" id="toggle_text"> پیدا کردن مسیر با کمترین تغییر خط</i></span> 
+            <input type="checkbox" onclick="textchange()" class="toggle toggle-primary" name="path" id="id_path" checked/>
+          </label>
+        </div>
+
+        <div class="form-control">
           <button type="submit" id="myButton" class="btn btn-warning" disabled>
             پیدا کردن مسیر
           </button>
