@@ -11,6 +11,9 @@ def StationsView(request):
 def MapView(request):
     return render(request, 'map.html')
 
+def ReportView(request):
+    return render(request, 'report.html')
+
 def HomePageView(request):
     if request.method == 'POST':
         
