@@ -135,8 +135,10 @@
       function textchange() {
         if (toggle.checked == true) {
             document.getElementById("toggle_text").innerHTML = " پیدا کردن مسیر با کمترین تغییر خط";
+            document.getElementById("toggle_warning").innerHTML = "";
           }else{
             document.getElementById("toggle_text").innerHTML = " پیدا کردن کوتاه ترین مسیر";
+            document.getElementById("toggle_warning").innerHTML = "مسیر شما ممکن است بهینه نباشد.";
           }
       }
 
