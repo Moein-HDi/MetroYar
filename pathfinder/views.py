@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from pathfinder.backend import *
 from pathfinder.subway import *
 from pathfinder.subway2 import *
-
+from pathfinder.subway3 import *
 
 def StationsView(request):
     return render(request, 'stations.html')
@@ -19,7 +19,7 @@ def HomePageView(request):
         
         origin = request.POST.get('origin')
         destination = request.POST.get('destination')
-        # pathtype = request.POST.get('path')
+        pathtype = request.POST.get('path')
         #input validation
         stlist = []
         for obj in subway.stations:
@@ -37,11 +37,11 @@ def HomePageView(request):
             return render(request, 'home.html', context)
         else:
             # Find path and its cost between stations
-            stops, lines, cost = calculate(str(origin), str(destination))
-            # if pathtype == 'on':
-            #     stops, lines, cost = calculate(str(origin), str(destination))
-            # else:
-            #     stops, lines, cost = calculateShort(str(origin), str(destination))
+            # stops, lines, cost = calculate(str(origin), str(destination))
+            if pathtype == 'on':
+                stops, lines, cost = calculate_leastchange(str(origin), str(destination))
+            else:
+                stops, lines, cost = calculate(str(origin), str(destination))
 
 
             s1, l1 ,cost1 = calculate('تجریش', 'کهریزک')

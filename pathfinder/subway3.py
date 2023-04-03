@@ -562,88 +562,88 @@ subway2.add_connection(g13, g14, 3)
 
 
 
-subway2.add_connection(a10, a10l1, 1000)
-subway2.add_connection(a10, a10l3, 1000)
-subway2.add_connection(a10l1, a10l3, 1000)
+subway2.add_connection(a10, a10l1, 8)
+subway2.add_connection(a10, a10l3, 8)
+subway2.add_connection(a10l1, a10l3, 8)
 
-subway2.add_connection(a12, a12, 1000)
-subway2.add_connection(a12, a12l6, 1000)
-subway2.add_connection(a12, a12l6, 1000)
+subway2.add_connection(a12, a12, 8)
+subway2.add_connection(a12, a12l6, 8)
+subway2.add_connection(a12, a12l6, 8)
 
-subway2.add_connection(a14, a14l1, 1000)
-subway2.add_connection(a14, a14l4, 1000)
-subway2.add_connection(a14l1, a14l4, 1000)
+subway2.add_connection(a14, a14l1, 8)
+subway2.add_connection(a14, a14l4, 8)
+subway2.add_connection(a14l1, a14l4, 8)
 
-subway2.add_connection(a16, a16l1, 1000)
-subway2.add_connection(a16, a16l2, 1000)
-subway2.add_connection(a16l1, a16l2, 1000)
+subway2.add_connection(a16, a16l1, 8)
+subway2.add_connection(a16, a16l2, 8)
+subway2.add_connection(a16l1, a16l2, 8)
 
-subway2.add_connection(a19, a19l1, 1000)
-subway2.add_connection(a19, a19l7, 1000)
-subway2.add_connection(a19l7, a19l1, 1000)
+subway2.add_connection(a19, a19l1, 8)
+subway2.add_connection(a19, a19l7, 8)
+subway2.add_connection(a19l7, a19l1, 8)
 
-subway2.add_connection(a27, a27l1, 1000)
-subway2.add_connection(a27, a27l1w, 1000)
-subway2.add_connection(a27l1, a27l1w, 1000)
+subway2.add_connection(a27, a27l1, 8)
+subway2.add_connection(a27, a27l1w, 8)
+subway2.add_connection(a27l1, a27l1w, 8)
 
-subway2.add_connection(b1, b1l2, 1000)
-subway2.add_connection(b1, b1l5, 1000)
-subway2.add_connection(b1l2, b1l5, 1000)
+subway2.add_connection(b1, b1l2, 8)
+subway2.add_connection(b1, b1l5, 8)
+subway2.add_connection(b1l2, b1l5, 8)
 
-subway2.add_connection(b4, b4l2, 1000)
-subway2.add_connection(b4, b4l4, 1000)
-subway2.add_connection(b4l2, b4l4, 1000)
+subway2.add_connection(b4, b4l2, 8)
+subway2.add_connection(b4, b4l4, 8)
+subway2.add_connection(b4l2, b4l4, 8)
 
-subway2.add_connection(b5, b5l2, 1000)
-subway2.add_connection(b5, b5l7, 1000)
-subway2.add_connection(b5l2, b5l7, 1000)
+subway2.add_connection(b5, b5l2, 8)
+subway2.add_connection(b5, b5l7, 8)
+subway2.add_connection(b5l2, b5l7, 8)
 
-subway2.add_connection(b11, b11l2, 1000)
-subway2.add_connection(b11, b11l4, 1000)
-subway2.add_connection(b11l2, b11l4, 1000)
+subway2.add_connection(b11, b11l2, 8)
+subway2.add_connection(b11, b11l4, 8)
+subway2.add_connection(b11l2, b11l4, 8)
 
-subway2.add_connection(b12, b12l2, 1000)
-subway2.add_connection(b12, b12l6, 1000)
-subway2.add_connection(b12l2, b12l6, 1000)
+subway2.add_connection(b12, b12l2, 8)
+subway2.add_connection(b12, b12l6, 8)
+subway2.add_connection(b12l2, b12l6, 8)
 
-subway2.add_connection(c8, c8l3, 1000)
-subway2.add_connection(c8, c8l7, 1000)
-subway2.add_connection(c8l3, c8l7, 1000)
+subway2.add_connection(c8, c8l3, 8)
+subway2.add_connection(c8, c8l7, 8)
+subway2.add_connection(c8l3, c8l7, 8)
 
-subway2.add_connection(c10, c10l3, 1000)
-subway2.add_connection(c10, c10l4, 1000)
-subway2.add_connection(c10l3, c10l4, 1000)
+subway2.add_connection(c10, c10l3, 8)
+subway2.add_connection(c10, c10l4, 8)
+subway2.add_connection(c10l3, c10l4, 8)
 
-subway2.add_connection(c11, c11, 1000)
-subway2.add_connection(c11, c11l6, 1000)
-subway2.add_connection(c11, c11l6, 1000)
+subway2.add_connection(c11, c11, 8)
+subway2.add_connection(c11, c11l6, 8)
+subway2.add_connection(c11, c11l6, 8)
 
-subway2.add_connection(d1, d1l4, 1000)
-subway2.add_connection(d1, d1l5, 1000)
-subway2.add_connection(d1l4, d1l5, 1000)
+subway2.add_connection(d1, d1l4, 8)
+subway2.add_connection(d1, d1l5, 8)
+subway2.add_connection(d1l4, d1l5, 8)
 
-subway2.add_connection(d3, d3l4, 1000)
-subway2.add_connection(d3, d3l4s, 1000)
-subway2.add_connection(d3l4, d3l4s, 1000)
+subway2.add_connection(d3, d3l4, 8)
+subway2.add_connection(d3, d3l4s, 8)
+subway2.add_connection(d3l4, d3l4s, 8)
 
-subway2.add_connection(d7, d7l4, 1000)
-subway2.add_connection(d7, d7l7, 1000)
-subway2.add_connection(d7l4, d7l7, 1000)
+subway2.add_connection(d7, d7l4, 8)
+subway2.add_connection(d7, d7l7, 8)
+subway2.add_connection(d7l4, d7l7, 8)
 
-subway2.add_connection(d10, d10l4, 1000)
-subway2.add_connection(d10, d10l6, 1000)
-subway2.add_connection(d10l4, d10l6, 1000)
+subway2.add_connection(d10, d10l4, 8)
+subway2.add_connection(d10, d10l6, 8)
+subway2.add_connection(d10l4, d10l6, 8)
 
-subway2.add_connection(e1, e1l5, 1000)
-subway2.add_connection(e1, e1l5w, 1000)
-subway2.add_connection(e1l5, e1l5w, 1000)
+subway2.add_connection(e1, e1l5, 8)
+subway2.add_connection(e1, e1l5w, 8)
+subway2.add_connection(e1l5, e1l5w, 8)
 
-subway2.add_connection(f6, f6l6, 1000)
-subway2.add_connection(f6, f6l7, 1000)
-subway2.add_connection(f6l6, f6l7, 1000)
+subway2.add_connection(f6, f6l6, 8)
+subway2.add_connection(f6, f6l7, 8)
+subway2.add_connection(f6l6, f6l7, 8)
 
 
-def calculate_leastchange(origin, destination):
+def calculate(origin, destination):
         fpath, cost = subway2.shortest_path(str(origin), str(destination))
 
         list1 = []
@@ -660,7 +660,7 @@ def calculate_leastchange(origin, destination):
                 lines.append(list1[index+1].lines[0])
             elif index < len(list1)-2 and list1[index].name == list1[index+1].name:
                 lines.append(list1[index+1].lines[0])
-                cost -= 1000
+                cost -= 8
                 cost += 8
         
 
@@ -668,7 +668,7 @@ def calculate_leastchange(origin, destination):
             list1.pop(0)
         if list1[-1-1].name == list1[-1].name:
             list1.pop(-1)
-            cost -= 1000
+            cost -= 8
             cost += 8
 
         stops = []
