@@ -1,4 +1,4 @@
-# MetroYar
+# MetroYar (Metroyab)
 A web app that helps finding the desired path in Tehran subway system using python
 Frontend is designed using tailwindCSS
 
