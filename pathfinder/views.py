@@ -5,11 +5,7 @@ from pathfinder.subway import *
 from pathfinder.subway2 import *
 from pathfinder.subway3 import *
 
-def PageNotFoundView(request):
-    return render(request, '404.html')
 
-def ServerErrorView(request):
-    return render(request, '500.html')
 
 def StationsView(request):
     return render(request, 'stations.html')
