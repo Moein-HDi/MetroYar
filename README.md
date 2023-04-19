@@ -1,12 +1,16 @@
 # MetroYar (Metroyab)
-A web app that helps finding the desired path in Tehran subway system using python
-Frontend is designed using tailwindCSS
+A web app that helps finding the desired path in Tehran subway system using python.
 
-## features
-- finding shortest path or the path with least line changes between two stations
-- estimating trips time
-- Tehran's metro map
-- metro stations pinned on google map
+Frontend is designed using tailwindCSS.
+
+## Demo
+https://metroyab.pythonanywhere.com/
+
+## Features
+- Finding the shortest path or the path with the least line changes between two stations
+- Estimating trip times
+- Viewing Tehran's metro map
+- Locating metro stations on Google Maps
 
 ## screenshots
 ![image](https://user-images.githubusercontent.com/60918091/230160341-cb0f0815-e703-428e-b8de-bd8a65a4bebc.png)
