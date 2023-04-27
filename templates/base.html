@@ -56,6 +56,17 @@
       </button> -->
     </div>
   </div>
+  <div id="banner" class="flex bg-warning sticky top-0 text-black p-1 text-center">
+    <div class="flex-none">
+      <a id="banner-close" onclick="bannerclose()" class="font-bold p-3"><i class="bi bi-x-circle"></i></a>
+    </div>
+    <div class="flex-1 text-sm font-semibold">
+      <span class="badge badge-outline">آپدیت</span> مشکل فعال نشدن دکمه مسیریابی برطرف شد
+    </div>
+    <div class="flex-none">
+      
+    </div>
+  </div>
   <!-- back -->
   <div class="hero min-h-screen bg-base-200 relative" style="background-image: url({% static 'BACK.svg' %});">
     <div class="hero-overlay bg-opacity-80"></div>
@@ -132,6 +143,21 @@
 
   <script src="{% static 'jquery.js' %}"></script>
   <script>
+    window.addEventListener('load', bannercheck);
+    function bannerclose() {
+      var bannerElement = document.getElementById("banner");
+      bannerElement.style.display = "none";
+      localStorage.setItem("bannerClosed", "true");
+    }
+    
+    function bannercheck() {
+      if (localStorage.getItem("bannerClosed") === 'true') {
+        var bannerElement = document.getElementById("banner");
+        bannerElement.style.display = "none";
+      }
+    }
+    </script>
+  <script>
     persian = { 0: '۰', 1: '۱', 2: '۲', 3: '۳', 4: '۴', 5: '۵', 6: '۶', 7: '۷', 8: '۸', 9: '۹' };
     $(".persian-digit").each(function () {
       for (var i = 0; i <= 9; i++) {
@@ -155,10 +181,12 @@
 
     
   </script>
+  
   <script>
     window.onload = function () {
-      document.getElementById("id_origin").addEventListener('keyup', myFunction);
-      document.getElementById("id_destination").addEventListener('keyup', myFunction);
+      document.getElementById("id_origin").addEventListener('input', myFunction);
+      document.getElementById("id_destination").addEventListener('input', myFunction);
+      window.addEventListener("pageshow", myFunction);
 
       function myFunction() {
         document.getElementById("myButton").disabled = true;
