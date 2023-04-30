@@ -41,9 +41,9 @@ def HomePageView(request):
             # Find path and its cost between stations
             # stops, lines, cost = calculate(str(origin), str(destination))
             if pathtype == 'on':
-                stops, lines, cost = calculate_leastchange(str(origin), str(destination))
-            else:
                 stops, lines, cost = calculate(str(origin), str(destination))
+            else:
+                stops, lines, cost = calculate_leastchange(str(origin), str(destination))
 
 
             s1, l1 ,cost1 = calculate('تجریش', 'کهریزک')

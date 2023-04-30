@@ -13,7 +13,10 @@
 
   
   <link rel="stylesheet" href="{% static 'src/output.css' %}">
-  
+  <script
+      src="https://kit.fontawesome.com/63c4b57529.js"
+      crossorigin="anonymous"
+    ></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   
 </head>
@@ -26,18 +29,16 @@
     <div class="navbar-start">
       <div class="dropdown">
         <label tabindex="0" class="btn btn-ghost btn-circle">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
-          </svg>
+          <i class="fa-solid fa-bars"></i>
         </label>
         <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-          <li><a href="/"><i class="bi bi-compass"></i>مسیر یابی</a></li>
-          <li><a href="/map"><i class="bi bi-map"></i>نقشه مترو</a></li>
-          <li><a href="/stations"><i class="bi bi-pin-map"></i>ایستگاه ها در نقشه</a></li>
+          <li><a href="/"><i class="fa-solid fa-compass"></i>مسیر یابی</a></li>
+          <li><a href="/map"><i class="fa-solid fa-map"></i>نقشه مترو</a></li>
+          <li><a href="/stations"><i class="fa-solid fa-map-pin"></i>ایستگاه ها در نقشه</a></li>
           <div class="divider"></div> 
-          <li><a href="/report"><i class="bi bi-bug"></i> گزارش خطا</a></li>
-          <li><label for="my-modal-6"><i class="bi bi-cash-stack"></i>حمایت مالی</label></li>
-          <li><label for="my-modal-4"><i class="bi bi-info-circle"></i>درباره من</label></li>
+          <li><a href="/report"><i class="fa-solid fa-bug"></i> گزارش خطا</a></li>
+          <li class="disabled"><label for="my-modal-6"><i class="fa-solid fa-credit-card"></i>حمایت مالی</label></li>
+          <li><label for="my-modal-4"><i class="fa-solid fa-circle-info"></i>درباره من</label></li>
         </ul>
       </div>
     </div>
@@ -56,7 +57,7 @@
       </button> -->
     </div>
   </div>
-  <div id="banner" class="flex bg-warning sticky top-0 text-black p-1 text-center">
+  <!-- <div id="banner" class="flex bg-warning sticky top-0 text-black p-1 text-center">
     <div class="flex-none">
       <a id="banner-close" onclick="bannerclose()" class="font-bold p-3"><i class="bi bi-x-circle"></i></a>
     </div>
@@ -66,7 +67,7 @@
     <div class="flex-none">
       
     </div>
-  </div>
+  </div> -->
   <!-- back -->
   <div class="hero min-h-screen bg-base-200 relative" style="background-image: url({% static 'BACK.svg' %});">
     <div class="hero-overlay bg-opacity-80"></div>
@@ -171,11 +172,11 @@
       var toggle = document.getElementById("id_path");
       function textchange() {
         if (toggle.checked == true) {
-            document.getElementById("toggle_text").innerHTML = " پیدا کردن مسیر با کمترین تغییر خط";
+            document.getElementById("toggle_text").innerHTML = " پیدا کردن مسیر سریع ترین مسیر";
             document.getElementById("toggle_warning").innerHTML = "";
           }else{
-            document.getElementById("toggle_text").innerHTML = " پیدا کردن مسیر سریعتر";
-            document.getElementById("toggle_warning").innerHTML = "مسیر سریعتر تغییر خط بیشتری دارد اما زمان آن ها لحاظ شده است.";
+            document.getElementById("toggle_text").innerHTML = " پیدا کردن مسیر با کمترین تغییر خط";
+            document.getElementById("toggle_warning").innerHTML = "این حالت تغییر خطوط کمتری دارد اما ممکن است زمان سفر شما را افزایش دهد.";
           }
       }
 

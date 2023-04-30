@@ -1,6 +1,16 @@
 {% extends "base.html" %} {% block content %}
 
 <div class="flex-shrink-0 w-full min-h-screen overflow-auto">
+  <div class="flex bg-warning sticky top-0 text-black p-1 text-center">
+    <div class="flex-none">
+    </div>
+    <div class="flex-1 text-sm font-semibold">
+      <span class="text-warning-content">به دلیل تحریم آیپی های ایران، بارگزاری نقشه ممکن است با مشکل مواجه شود</span> <a href="https://www.google.com/maps/d/viewer?mid=1B6B0hJp7awTWWwLfxGerEIFqrnmowEk&ll=35.71233599870589%2C51.401294949691035&z=12" class="btn btn-xs bg-warning-content text-warning">باز کردن نقشه در map</a>
+    </div>
+    <div class="flex-none">
+      
+    </div>
+  </div>
   <div class="min-h-full relative">
     <!-- <div class="block absolute inset-x-0 navbar bg-base-200 -top-5"></div> -->
     <iframe class="min-h-screen w-full" src="https://www.google.com/maps/d/embed?mid=1B6B0hJp7awTWWwLfxGerEIFqrnmowEk&ehbc=2E312F"></iframe>
