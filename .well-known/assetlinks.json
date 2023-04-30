@@ -1,0 +1,6 @@
+[{
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target" : { "namespace": "android_app", "package_name": "com.pythonanywhere.metroyab.twa",
+                     "sha256_cert_fingerprints": ["28:9C:78:8D:CA:BE:E8:F9:8F:3E:42:90:F8:6C:B5:3A:BC:34:C0:86:A8:13:76:F0:A2:23:4E:BB:98:50:36:BF"] }
+      }
+]
