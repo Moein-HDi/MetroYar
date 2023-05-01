@@ -141,6 +141,8 @@ c22 = Station('اقدسیه', ['l3'])
 c23 = Station('شهید محلاتی', ['l3'])
 c24 = Station('قائم', ['l3'])
 #l4
+d0 = Station('علامه جعفری', ['l4'])
+
 d1 = Station('ارم سبز', [])
 d1l4 = Station('ارم سبز1', ['l4'])
 d1l5 = Station('ارم سبز2', ['l5'])
@@ -315,6 +317,8 @@ subway2.add_station(c21)
 subway2.add_station(c22)
 subway2.add_station(c23)
 subway2.add_station(c24)
+
+subway2.add_station(d0)
 subway2.add_station(d1)
 subway2.add_station(d2)
 subway2.add_station(d3)
@@ -489,6 +493,8 @@ subway2.add_connection(c20, c21, 2)
 subway2.add_connection(c21, c22, 2)
 subway2.add_connection(c22, c23, 4)
 subway2.add_connection(c23, c24, 5)
+
+subway2.add_connection(d0, d1l4, 2)
 subway2.add_connection(d1l4, d2, 2)
 subway2.add_connection(d2, d3l4, 3)
 subway2.add_connection(d3l4, d4, 2)
@@ -526,16 +532,16 @@ subway2.add_connection(f1, f2, 1)
 subway2.add_connection(f2, f3, 2)
 subway2.add_connection(f3, f4, 2)
 subway2.add_connection(f4, f5, 2)
-subway2.add_connection(f5, f6l6, 2)
-subway2.add_connection(f6l6, f7, 2)
+subway2.add_connection(f5, f6l6, 3)
+subway2.add_connection(f6l6, f7, 4)
 subway2.add_connection(f7, f8, 2)
-subway2.add_connection(f8, c11l6, 2)
-subway2.add_connection(c11l6, a12l6, 2)
-subway2.add_connection(a12l6, b12l6, 2)
-subway2.add_connection(b12l6, d10l6, 2)
-subway2.add_connection(d10l6, f9, 2)
+subway2.add_connection(f8, c11l6, 3)
+subway2.add_connection(c11l6, a12l6, 3)
+subway2.add_connection(a12l6, b12l6, 5)
+subway2.add_connection(b12l6, d10l6, 3)
+subway2.add_connection(d10l6, f9, 3)
 subway2.add_connection(f9, f10, 4)
-subway2.add_connection(f10, f11, 2)
+subway2.add_connection(f10, f11, 3)
 subway2.add_connection(f11, f12, 3)
 subway2.add_connection(f12, f13, 5)
 
@@ -562,85 +568,85 @@ subway2.add_connection(g13, g14, 3)
 
 
 
-subway2.add_connection(a10, a10l1, 8)
-subway2.add_connection(a10, a10l3, 8)
-subway2.add_connection(a10l1, a10l3, 8)
+subway2.add_connection(a10, a10l1, 10)
+subway2.add_connection(a10, a10l3, 10)
+subway2.add_connection(a10l1, a10l3, 10)
 
-subway2.add_connection(a12, a12, 8)
-subway2.add_connection(a12, a12l6, 8)
-subway2.add_connection(a12, a12l6, 8)
+subway2.add_connection(a12, a12, 10)
+subway2.add_connection(a12, a12l6, 10)
+subway2.add_connection(a12, a12l6, 10)
 
-subway2.add_connection(a14, a14l1, 8)
-subway2.add_connection(a14, a14l4, 8)
-subway2.add_connection(a14l1, a14l4, 8)
+subway2.add_connection(a14, a14l1, 10)
+subway2.add_connection(a14, a14l4, 10)
+subway2.add_connection(a14l1, a14l4, 10)
 
-subway2.add_connection(a16, a16l1, 8)
-subway2.add_connection(a16, a16l2, 8)
-subway2.add_connection(a16l1, a16l2, 8)
+subway2.add_connection(a16, a16l1, 10)
+subway2.add_connection(a16, a16l2, 10)
+subway2.add_connection(a16l1, a16l2, 10)
 
-subway2.add_connection(a19, a19l1, 8)
-subway2.add_connection(a19, a19l7, 8)
-subway2.add_connection(a19l7, a19l1, 8)
+subway2.add_connection(a19, a19l1, 10)
+subway2.add_connection(a19, a19l7, 10)
+subway2.add_connection(a19l7, a19l1, 10)
 
-subway2.add_connection(a27, a27l1, 8)
-subway2.add_connection(a27, a27l1w, 8)
-subway2.add_connection(a27l1, a27l1w, 8)
+subway2.add_connection(a27, a27l1, 10)
+subway2.add_connection(a27, a27l1w, 10)
+subway2.add_connection(a27l1, a27l1w, 10)
 
-subway2.add_connection(b1, b1l2, 8)
-subway2.add_connection(b1, b1l5, 8)
-subway2.add_connection(b1l2, b1l5, 8)
+subway2.add_connection(b1, b1l2, 10)
+subway2.add_connection(b1, b1l5, 10)
+subway2.add_connection(b1l2, b1l5, 10)
 
-subway2.add_connection(b4, b4l2, 8)
-subway2.add_connection(b4, b4l4, 8)
-subway2.add_connection(b4l2, b4l4, 8)
+subway2.add_connection(b4, b4l2, 10)
+subway2.add_connection(b4, b4l4, 10)
+subway2.add_connection(b4l2, b4l4, 10)
 
-subway2.add_connection(b5, b5l2, 8)
-subway2.add_connection(b5, b5l7, 8)
-subway2.add_connection(b5l2, b5l7, 8)
+subway2.add_connection(b5, b5l2, 10)
+subway2.add_connection(b5, b5l7, 10)
+subway2.add_connection(b5l2, b5l7, 10)
 
-subway2.add_connection(b11, b11l2, 8)
-subway2.add_connection(b11, b11l4, 8)
-subway2.add_connection(b11l2, b11l4, 8)
+subway2.add_connection(b11, b11l2, 10)
+subway2.add_connection(b11, b11l4, 10)
+subway2.add_connection(b11l2, b11l4, 10)
 
-subway2.add_connection(b12, b12l2, 8)
-subway2.add_connection(b12, b12l6, 8)
-subway2.add_connection(b12l2, b12l6, 8)
+subway2.add_connection(b12, b12l2, 10)
+subway2.add_connection(b12, b12l6, 10)
+subway2.add_connection(b12l2, b12l6, 10)
 
-subway2.add_connection(c8, c8l3, 8)
-subway2.add_connection(c8, c8l7, 8)
-subway2.add_connection(c8l3, c8l7, 8)
+subway2.add_connection(c8, c8l3, 10)
+subway2.add_connection(c8, c8l7, 10)
+subway2.add_connection(c8l3, c8l7, 10)
 
-subway2.add_connection(c10, c10l3, 8)
-subway2.add_connection(c10, c10l4, 8)
-subway2.add_connection(c10l3, c10l4, 8)
+subway2.add_connection(c10, c10l3, 10)
+subway2.add_connection(c10, c10l4, 10)
+subway2.add_connection(c10l3, c10l4, 10)
 
-subway2.add_connection(c11, c11, 8)
-subway2.add_connection(c11, c11l6, 8)
-subway2.add_connection(c11, c11l6, 8)
+subway2.add_connection(c11, c11, 10)
+subway2.add_connection(c11, c11l6, 10)
+subway2.add_connection(c11, c11l6, 10)
 
-subway2.add_connection(d1, d1l4, 8)
-subway2.add_connection(d1, d1l5, 8)
-subway2.add_connection(d1l4, d1l5, 8)
+subway2.add_connection(d1, d1l4, 10)
+subway2.add_connection(d1, d1l5, 10)
+subway2.add_connection(d1l4, d1l5, 10)
 
-subway2.add_connection(d3, d3l4, 8)
-subway2.add_connection(d3, d3l4s, 8)
-subway2.add_connection(d3l4, d3l4s, 8)
+subway2.add_connection(d3, d3l4, 10)
+subway2.add_connection(d3, d3l4s, 10)
+subway2.add_connection(d3l4, d3l4s, 10)
 
-subway2.add_connection(d7, d7l4, 8)
-subway2.add_connection(d7, d7l7, 8)
-subway2.add_connection(d7l4, d7l7, 8)
+subway2.add_connection(d7, d7l4, 10)
+subway2.add_connection(d7, d7l7, 10)
+subway2.add_connection(d7l4, d7l7, 10)
 
-subway2.add_connection(d10, d10l4, 8)
-subway2.add_connection(d10, d10l6, 8)
-subway2.add_connection(d10l4, d10l6, 8)
+subway2.add_connection(d10, d10l4, 10)
+subway2.add_connection(d10, d10l6, 10)
+subway2.add_connection(d10l4, d10l6, 10)
 
-subway2.add_connection(e1, e1l5, 8)
-subway2.add_connection(e1, e1l5w, 8)
-subway2.add_connection(e1l5, e1l5w, 8)
+subway2.add_connection(e1, e1l5, 10)
+subway2.add_connection(e1, e1l5w, 10)
+subway2.add_connection(e1l5, e1l5w, 10)
 
-subway2.add_connection(f6, f6l6, 8)
-subway2.add_connection(f6, f6l7, 8)
-subway2.add_connection(f6l6, f6l7, 8)
+subway2.add_connection(f6, f6l6, 10)
+subway2.add_connection(f6, f6l7, 10)
+subway2.add_connection(f6l6, f6l7, 10)
 
 
 def calculate(origin, destination):
@@ -660,16 +666,16 @@ def calculate(origin, destination):
                 lines.append(list1[index+1].lines[0])
             elif index < len(list1)-2 and list1[index].name == list1[index+1].name:
                 lines.append(list1[index+1].lines[0])
-                cost -= 8
-                cost += 8
+                # cost -= 10
+                # cost += 10
         
 
         if list1[0].name == list1[1].name:
             list1.pop(0)
         if list1[-1-1].name == list1[-1].name:
             list1.pop(-1)
-            cost -= 8
-            cost += 8
+            # cost -= 10
+            # cost += 10
 
         stops = []
 

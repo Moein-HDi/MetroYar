@@ -141,6 +141,8 @@ c22 = Station('اقدسیه', ['l3'])
 c23 = Station('شهید محلاتی', ['l3'])
 c24 = Station('قائم', ['l3'])
 #l4
+d0 = Station('علامه جعفری', ['l4'])
+
 d1 = Station('ارم سبز', [])
 d1l4 = Station('ارم سبز1', ['l4'])
 d1l5 = Station('ارم سبز2', ['l5'])
@@ -315,6 +317,8 @@ subway2.add_station(c21)
 subway2.add_station(c22)
 subway2.add_station(c23)
 subway2.add_station(c24)
+
+subway2.add_station(d0)
 subway2.add_station(d1)
 subway2.add_station(d2)
 subway2.add_station(d3)
@@ -489,6 +493,8 @@ subway2.add_connection(c20, c21, 2)
 subway2.add_connection(c21, c22, 2)
 subway2.add_connection(c22, c23, 4)
 subway2.add_connection(c23, c24, 5)
+
+subway2.add_connection(d0, d1l4, 2)
 subway2.add_connection(d1l4, d2, 2)
 subway2.add_connection(d2, d3l4, 3)
 subway2.add_connection(d3l4, d4, 2)
@@ -526,16 +532,16 @@ subway2.add_connection(f1, f2, 1)
 subway2.add_connection(f2, f3, 2)
 subway2.add_connection(f3, f4, 2)
 subway2.add_connection(f4, f5, 2)
-subway2.add_connection(f5, f6l6, 2)
-subway2.add_connection(f6l6, f7, 2)
+subway2.add_connection(f5, f6l6, 3)
+subway2.add_connection(f6l6, f7, 4)
 subway2.add_connection(f7, f8, 2)
-subway2.add_connection(f8, c11l6, 2)
-subway2.add_connection(c11l6, a12l6, 2)
-subway2.add_connection(a12l6, b12l6, 2)
-subway2.add_connection(b12l6, d10l6, 2)
-subway2.add_connection(d10l6, f9, 2)
+subway2.add_connection(f8, c11l6, 3)
+subway2.add_connection(c11l6, a12l6, 3)
+subway2.add_connection(a12l6, b12l6, 5)
+subway2.add_connection(b12l6, d10l6, 3)
+subway2.add_connection(d10l6, f9, 3)
 subway2.add_connection(f9, f10, 4)
-subway2.add_connection(f10, f11, 2)
+subway2.add_connection(f10, f11, 3)
 subway2.add_connection(f11, f12, 3)
 subway2.add_connection(f12, f13, 5)
 
@@ -661,7 +667,7 @@ def calculate_leastchange(origin, destination):
             elif index < len(list1)-2 and list1[index].name == list1[index+1].name:
                 lines.append(list1[index+1].lines[0])
                 cost -= 1000
-                cost += 8
+                cost += 10
         
 
         if list1[0].name == list1[1].name:
@@ -669,7 +675,7 @@ def calculate_leastchange(origin, destination):
         if list1[-1-1].name == list1[-1].name:
             list1.pop(-1)
             cost -= 1000
-            cost += 8
+            cost += 10
 
         stops = []
 

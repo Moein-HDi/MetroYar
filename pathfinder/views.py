@@ -42,15 +42,26 @@ def HomePageView(request):
             # stops, lines, cost = calculate(str(origin), str(destination))
             if pathtype == 'on':
                 stops, lines, cost = calculate(str(origin), str(destination))
+                stops_2, lines_2, cost_2 = calculate_leastchange(str(origin), str(destination))
+                if cost != cost_2:
+                    costdesc = str(abs(cost_2 - cost)) + ' دقیقه سریعتر از مسیر با تغییر خط کمتر'
+                else:
+                    costdesc = 'سریع ترین مسیر ممکن محاسبه شده است.'
+                    
             else:
                 stops, lines, cost = calculate_leastchange(str(origin), str(destination))
+                stops_2, lines_2, cost_2 = calculate(str(origin), str(destination))
+                if cost != cost_2:
+                    costdesc = str(abs(cost_2 - cost)) + ' دقیقه کند تر از سریع ترین مسیر'
+                else:
+                    costdesc = 'سریع ترین مسیر ممکن محاسبه شده است.'
 
 
             s1, l1 ,cost1 = calculate('تجریش', 'کهریزک')
             s1w, l1w, cost2 = calculate('شاهد', 'فرودگاه امام خمینی')
             s2, l2, cost3 = calculate('فرهنگسرا', 'تهران (صادقیه)')
             s3, l3, cost4 = calculate('قائم', 'آزادگان')
-            s4, l4, cost5 = calculate('شهید کلاهدوز', 'ارم سبز')
+            s4, l4, cost5 = calculate('شهید کلاهدوز', 'علامه جعفری')
             s4s, l4s, cost6 = calculate('بیمه', 'پایانه 4و6 فرودگاه مهرآباد')
             s5, l5, cost7 = calculate('تهران (صادقیه)', 'گلشهر')
             s5w, l5w, cost8 = calculate('گلشهر', 'شهید سپهبد سلیمانی')
@@ -111,7 +122,7 @@ def HomePageView(request):
                     j = s4.index(next(station for station in s4 if station.name == stops[i].name))
                     try:
                         if stops[i+1].name == s4[j+1].name:
-                            lines2.append(Line('l4','خط 4 - به سمت ارم سبز'))
+                            lines2.append(Line('l4','خط 4 - به سمت ارم سبز (علامه جعفری)'))
                         else:
                             lines2.append(Line('l4','خط 4 - به سمت شهید کلاهدوز'))
                     except:
@@ -175,10 +186,10 @@ def HomePageView(request):
             error = 'hidden=True'
 
             if cost > 60:
-                costdesc = str('{h} ساعت و {m} دقیقه'.format(h=int(cost/60), m=cost%60))
+                # costdesc = str('{h} ساعت و {m} دقیقه'.format(h=int(cost/60), m=cost%60))
                 cost = str('{h}:{m:02d}'.format(h=int(cost/60), m=cost%60))
             else:
-                costdesc = str('{m} دقیقه'.format(m=int(cost)))
+                # costdesc = str('{m} دقیقه'.format(m=int(cost)))
                 cost = str('00:{m:02d}'.format(m=int(cost)))
             context = {
                 'origin': stops[0].name,
